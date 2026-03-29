@@ -5,7 +5,7 @@ file(MAKE_DIRECTORY ${COMPONENT_DIR}/picoruby/mrbgems/picoruby-mbedtls/lib/mbedt
 
 if(${PICORB_VM} STREQUAL "mruby")
   file(MAKE_DIRECTORY ${COMPONENT_DIR}/picoruby/build/esp32-microruby/include)
-  set(MRUBY_CONFIG_STRING "${COMPONENT_DIR}/build_config/${IDF_TARGET_ARCH}-esp-microruby.rb")
+  set(MRUBY_CONFIG_STRING "${COMPONENT_DIR}/build_config/${IDF_TARGET_ARCH}-denko.rb")
   set(LIBMRUBY_PATH "esp32-microruby")
   set(CUSTOM_TARGET_NAME "microruby")
   set(ADDITIONAL_INCLUDE_DIRS
