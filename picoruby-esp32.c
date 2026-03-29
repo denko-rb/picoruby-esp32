@@ -22,7 +22,7 @@
 #if defined(CONFIG_SPIRAM)
 #define HEAP_SIZE (1024 * 1024)
 #else
-#define HEAP_SIZE (1024 * 250)
+#define HEAP_SIZE (1024 * 100)
 #endif
 #endif
 

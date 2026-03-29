@@ -88,7 +88,7 @@ MRuby::CrossBuild.new('esp32-microruby') do |conf|
   # conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-time"
 
   conf.gem core: 'picoruby-esp32'
-  conf.gembox 'shell'
+  # conf.gembox 'shell'
 
   # stdlib
   conf.gem core: 'picoruby-rng'
