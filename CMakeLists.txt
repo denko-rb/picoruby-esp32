@@ -1,4 +1,4 @@
-set(PICORB_VM "mrubyc" CACHE STRING "Select build mode (mrubyc or mruby)")
+set(PICORB_VM "mruby" CACHE STRING "Select build mode (mrubyc or mruby)")
 message(STATUS "PICORB_VM is set to: ${PICORB_VM}")
 
 file(MAKE_DIRECTORY ${COMPONENT_DIR}/picoruby/mrbgems/picoruby-mbedtls/lib/mbedtls/include)
@@ -142,7 +142,7 @@ add_custom_target(
 add_dependencies(${COMPONENT_LIB} ${CUSTOM_TARGET_NAME})
 
 # Compile Ruby files
-set(RUBY_FILES main_task)
+set(RUBY_FILES denko_task)
 set(PICORBC ${COMPONENT_DIR}/picoruby/bin/picorbc)
 set(GENERATED_C_FILES "")
 
