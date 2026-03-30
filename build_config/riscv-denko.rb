@@ -108,4 +108,14 @@ MRuby::CrossBuild.new('esp32-microruby') do |conf|
   conf.gem core: 'picoruby-mbedtls'
   conf.gem core: 'picoruby-socket'
   # conf.gem core: 'picoruby-adafruit_sk6812'
+
+  # ESP32 implementation of Denko::Board
+  conf.gem "#{__dir__}/../mrbgems/mruby-denko-esp32"
+
+  # C optimized methods for Denko::Canvas on mruby
+  conf.gem github: "denko-rb/mruby-denko-fastcanvas"
+
+  # C optimized methods for GPIO, I2C, and SPI writes, to speed up Display drawing.
+  conf.gem "#{__dir__}/../mrbgems/mruby-denko-esp32/mrbgems/mruby-denko-fastio"
+  # conf.gem "#{__dir__}/mrbgems/mruby-denko-fastoled"
 end
