@@ -1,9 +1,9 @@
 MRuby::CrossBuild.new('esp32-microruby') do |conf|
   conf.toolchain('gcc')
 
-  conf.cc.command = 'xtensa-esp32-elf-gcc'
-  conf.linker.command = 'xtensa-esp32-elf-ld'
-  conf.archiver.command = 'xtensa-esp32-elf-ar'
+  conf.cc.command = "xtensa-#{ENV['CONFIG_IDF_TARGET']}-elf-gcc"
+  conf.linker.command = "xtensa-#{ENV['CONFIG_IDF_TARGET']}-elf-ld"
+  conf.archiver.command = "xtensa-#{ENV['CONFIG_IDF_TARGET']}-elf-ar"
 
   conf.cc.host_command = 'gcc'
   conf.cc.flags << '-Wall'
@@ -41,6 +41,8 @@ MRuby::CrossBuild.new('esp32-microruby') do |conf|
   conf.gem gemdir: '../picoruby/mrbgems/picoruby-mruby/lib/mruby/mrbgems/mruby-sprintf'
   conf.gem gemdir: '../picoruby/mrbgems/picoruby-mruby/lib/mruby/mrbgems/mruby-math'
 
+  conf.gem core: 'picoruby-esp32'
+
   conf.gembox 'shell'
 
   # stdlib
@@ -57,7 +59,6 @@ MRuby::CrossBuild.new('esp32-microruby') do |conf|
   conf.gem core: 'picoruby-pwm'
 
   # others
-  conf.gem core: 'picoruby-esp32'
   # conf.gem core: 'picoruby-rmt'
   conf.gem core: 'picoruby-mbedtls'
   conf.gem core: 'picoruby-socket'
