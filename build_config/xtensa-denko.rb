@@ -67,11 +67,11 @@ MRuby::CrossBuild.new('esp32-microruby') do |conf|
   conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-string-ext"
   conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-symbol-ext"
 
-  # Require mruby-fiber (build fails)
-  # conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-enum-chain"
-  # conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-enum-ext"
-  # conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-enumerator"
-  # conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-set"
+  # Require mruby-fiber explicitly so the others work.
+  conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-fiber"
+  conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-enumerator"
+  conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-enum-ext"
+  conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-enum-chain"
 
   # Require mruby-compiler (build fails)
   # conf.gem gemdir: "#{mruby_mrbgem_dir}/mruby-eval"
