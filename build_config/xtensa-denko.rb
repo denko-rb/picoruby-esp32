@@ -91,9 +91,9 @@ MRuby::CrossBuild.new('esp32-microruby') do |conf|
   # conf.gembox 'shell'
 
   # stdlib
-  conf.gem core: 'picoruby-rng'
-  conf.gem core: 'picoruby-base64'
-  conf.gem core: 'picoruby-yaml'
+  # conf.gem core: 'picoruby-rng'
+  # conf.gem core: 'picoruby-base64'
+  # conf.gem core: 'picoruby-yaml'
 
   # peripherals
   conf.gem core: 'picoruby-gpio'
@@ -105,8 +105,8 @@ MRuby::CrossBuild.new('esp32-microruby') do |conf|
 
   # others
   # conf.gem core: 'picoruby-rmt'
-  conf.gem core: 'picoruby-mbedtls'
-  conf.gem core: 'picoruby-socket'
+  # conf.gem core: 'picoruby-mbedtls'
+  # conf.gem core: 'picoruby-socket'
   # conf.gem core: 'picoruby-adafruit_sk6812'
 
   # ESP32 implementation of Denko::Board
